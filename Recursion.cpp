@@ -4,6 +4,7 @@
 #include<iostream>
 #include<sstream>
 #include<string>
+#include <exception>
 
 using namespace std;
 
@@ -107,7 +108,12 @@ extern std::string CallSimpleExceptionMethod(int i)
 
 	resourceThatNeedsToBeCleanedup = new MyFakeClass();
 
-	SimpleExceptionMethod(1);
+	try{
+		SimpleExceptionMethod(1);
+	}
+	catch (exception& exc){
+		cout << "Exception called: " << exc.what() << endl;
+	}
 
 	delete resourceThatNeedsToBeCleanedup;
 
@@ -131,7 +137,7 @@ extern void SimpleExceptionMethod(int i)
 	else if (i == 3)
 	{
         // TODO uncomment line below, as you need to have all three exceptions working here
-		//throw MyException3();
+		throw MyException3();
 	}
 	else
 	{
@@ -153,4 +159,9 @@ char const* MyException1::what() const throw() {
 char const* MyException2::what() const throw() {
 	return "MyException2";
 }
+
 // TODO make a MyException3::what
+
+char const* MyException3::what() const throw() {
+	return "MyException3";
+}
