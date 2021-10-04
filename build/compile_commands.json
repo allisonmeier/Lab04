@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/andrew/Lab04/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -o CMakeFiles/runMain.dir/main.cpp.o -c /home/andrew/Lab04/main.cpp",
+  "file": "/home/andrew/Lab04/main.cpp"
+},
+{
+  "directory": "/home/andrew/Lab04/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -o CMakeFiles/runTests.dir/tests.cpp.o -c /home/andrew/Lab04/tests.cpp",
+  "file": "/home/andrew/Lab04/tests.cpp"
+},
+{
+  "directory": "/home/andrew/Lab04/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -o CMakeFiles/applibrary.dir/Recursion.cpp.o -c /home/andrew/Lab04/Recursion.cpp",
+  "file": "/home/andrew/Lab04/Recursion.cpp"
+}
+]

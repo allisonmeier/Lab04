@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrew/Lab04/Recursion.h
+vector
+-
+stack
+-
+string
+-
+iostream
+-
+
+/home/andrew/Lab04/tests.cpp
+Recursion.h
+/home/andrew/Lab04/Recursion.h
+gtest/gtest.h
+-
+
