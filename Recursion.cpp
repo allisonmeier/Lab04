@@ -4,6 +4,7 @@
 #include<iostream>
 #include<sstream>
 #include<string>
+#include<vector>
 
 using namespace std;
 
@@ -65,13 +66,33 @@ bool ChessBoard::Solve(ChessBoard chessBoard, int col) {
 	return false;
 }
 
+bool ChessBoard::SolveStack(ChessBoard ChessBoard, int numQueens){
+	vector<int[2]> coordStack;
+	for(int row = 7; row > 0; row--){
+		for(int col = 7; col > 0; col--){
+			int coord[2] = {row, col};
+			coordStack.push_back(coord);
+		}
+	}
+	
+	
+	while(coordStack.size() > 0){
+		int coord[2] = coordStack[coordStack.size() - 1];
+		coordStack.pop_back();
+	}
+
+}
+
 
 bool ChessBoard::CheckSafeQueens(ChessBoard chessBoard, int row, int col) 
 {
+	
+
+
 
     return false;
 
-    // TODO
+    
 }
 
 

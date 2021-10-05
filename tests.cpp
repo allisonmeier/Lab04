@@ -2,9 +2,6 @@
 #include "Recursion.h"
 #include <gtest/gtest.h>
 
-
-		
-
 		TEST(Factorial, Recursion1)
 		{
 			FactorialByRecursion calculator;
