@@ -6,6 +6,50 @@
 
 		
 
+		//Recurstion palindrome tests
+		TEST(PalindromeByRecursion, ComplicatedString){
+			PalindromeByRecursion p;
+			bool b = p.palindromeRecursion("racecar");
+			ASSERT_EQ(1, b);
+		}
+		TEST(PalindromeByRecursion, EmptyString){
+			PalindromeByRecursion p;
+			bool b = p.palindromeRecursion("");
+			ASSERT_EQ(1, b);
+		}
+		TEST(PalindromeByRecursion, SimpleString){
+			PalindromeByRecursion p;
+			bool b = p.palindromeRecursion("a");
+			ASSERT_EQ(1, b);
+		}
+		TEST(PalindromeByRecursion, NegativeTest){
+			PalindromeByRecursion p;
+			bool b = p.palindromeRecursion("LetsGOOOO");
+			ASSERT_EQ(0, b);
+		}
+
+		//Stack Palindrome Tests
+		TEST(PalindromeByStack, ComplicatedString){
+			PlaindromeByStack p;
+			bool b = p.palindromeStack("racecar");
+			ASSERT_EQ(1,b);
+		}
+		TEST(PalindromeByStack, EmptyString){
+			PlaindromeByStack p;
+			bool b = p.palindromeStack("");
+			ASSERT_EQ(1,b);
+		}
+		TEST(PalindromeByStack, SimpleString){
+			PlaindromeByStack p;
+			bool b = p.palindromeStack("a");
+			ASSERT_EQ(1,b);
+		}
+		TEST(PalindromeByStack, NegativeTest){
+			PlaindromeByStack p;
+			bool b = p.palindromeStack("NotARacecar");
+			ASSERT_EQ(1,b);
+		}
+		
 		TEST(Factorial, Recursion1)
 		{
 			FactorialByRecursion calculator;
