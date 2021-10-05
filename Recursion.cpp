@@ -109,7 +109,20 @@ extern std::string CallSimpleExceptionMethod(int i)
 	resourceThatNeedsToBeCleanedup = new MyFakeClass();
 
 	try{
-		SimpleExceptionMethod(1);
+		SimpleExceptionMethod(i);
+
+		if (i = 1){
+			return std::string("I got Exception 1");
+		} else if (i = 2) {
+			return std::string("I got Exception 2");
+		} else if (i = 3) {
+			return std::string("I got Exception 3");
+		} else if (i = 4) {
+			return std::string("I did not get an Exception");
+		}
+
+
+
 	}
 	catch (exception& exc){
 		cout << "Exception called: " << exc.what() << endl;
@@ -159,8 +172,6 @@ char const* MyException1::what() const throw() {
 char const* MyException2::what() const throw() {
 	return "MyException2";
 }
-
-// TODO make a MyException3::what
 
 char const* MyException3::what() const throw() {
 	return "MyException3";
