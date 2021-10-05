@@ -92,48 +92,44 @@ string ChessBoard::ToString() {
 	return answer;
 }
 
+
+// catches errors as needed/caught
 extern std::string CallSimpleExceptionMethod(int i)
 {    
-    // TODO:
-    // Note this is starter code that is not safe.  
-    // As Simple exceptin method will throw an exception
-    // which will not be handled, and we will also leak resources.
-    // Make this method safer and handle all possible exceptions 
-    // And also return a string of the exception recieved
-    // The tests will tell you what to string to return.
-
-
-	std::string retVal;
+    
+	std::string ret;
 	MyFakeClass* resourceThatNeedsToBeCleanedup = nullptr;
 
 	resourceThatNeedsToBeCleanedup = new MyFakeClass();
 
-	try{
+	try{ // does it find an exception?
 		SimpleExceptionMethod(i);
-
-		if (i = 1){
-			return std::string("I got Exception 1");
-		} else if (i = 2) {
-			return std::string("I got Exception 2");
-		} else if (i = 3) {
-			return std::string("I got Exception 3");
-		} else if (i = 4) {
-			return std::string("I did not get an Exception");
-		}
-
-
-
+		ret = "I did not get an Exception";
+	} 
+	
+	// if so, here's how it should behave in each case
+	catch (const MyException1& exc){
+		ret = exc.what();
+	} 
+	catch (const MyException2& exc){
+		ret = exc.what();
+	} 
+	catch (const MyException3& exc){
+		ret = exc.what();
+	} 
+	catch (const exception& exc){
+		ret = "Unknown Exception";
 	}
-	catch (exception& exc){
-		cout << "Exception called: " << exc.what() << endl;
-	}
 
+	// clean-up crew
 	delete resourceThatNeedsToBeCleanedup;
 
-	return retVal;
+	// and we're done
+	return ret;
 }
 
-// NOTE this function should not be editted.
+
+// takes input -> defines exception
 extern void SimpleExceptionMethod(int i)
 {
 	int retVal = 0;
@@ -149,8 +145,7 @@ extern void SimpleExceptionMethod(int i)
 	}
 	else if (i == 3)
 	{
-        // TODO uncomment line below, as you need to have all three exceptions working here
-		throw MyException3();
+        throw MyException3();
 	}
 	else
 	{
@@ -162,17 +157,16 @@ extern void SimpleExceptionMethod(int i)
 }
 
 
-
+// custom exception types for this
 char const* MyBaseException::what() const throw() {
-	return "MyBaseException";
+	return "Base Exception";
 }
 char const* MyException1::what() const throw() {
-	return "MyException1";
+	return "Exception 1";
 }
 char const* MyException2::what() const throw() {
-	return "MyException2";
+	return "Exception 2";
 }
-
 char const* MyException3::what() const throw() {
-	return "MyException3";
+	return "Exception 3";
 }
