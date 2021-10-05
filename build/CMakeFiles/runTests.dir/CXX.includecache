@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/DataStructures2021/lab04-1/Recursion.h
+vector
+-
+stack
+-
+string
+-
+iostream
+-
+
+/mnt/c/DataStructures2021/lab04-1/tests.cpp
+Recursion.h
+/mnt/c/DataStructures2021/lab04-1/Recursion.h
+gtest/gtest.h
+-
+string
+-
+

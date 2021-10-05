@@ -1,6 +1,7 @@
 // tests.cpp
 #include "Recursion.h"
 #include <gtest/gtest.h>
+#include <string>
 
 
 		
@@ -49,7 +50,7 @@
 		{
 
 			std::string status = CallSimpleExceptionMethod(1);
-			ASSERT_EQ(std::string("I got Exception 1"), status);
+			ASSERT_EQ(std::string("Exception 1"), status);
 			
 		}
 
@@ -58,7 +59,7 @@
 
 
 				std::string status = CallSimpleExceptionMethod(2);
-				ASSERT_EQ(std::string("I got Exception 2"), status);
+				ASSERT_EQ(std::string("Exception 2"), status);
 
 		}
 
@@ -66,7 +67,7 @@
 		{
 
 			std::string status = CallSimpleExceptionMethod(3);
-			ASSERT_EQ(std::string("I got Exception 3"), status);
+			ASSERT_EQ(std::string("Exception 3"), status);
 
 		}
 
